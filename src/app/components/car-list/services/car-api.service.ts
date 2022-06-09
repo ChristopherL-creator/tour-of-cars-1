@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Car } from 'src/app/model/car';
 import { CARS } from 'src/app/model/mock-cars';
+import { MessageService } from './message/message.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +11,12 @@ import { CARS } from 'src/app/model/mock-cars';
 export class CarApiService {
 
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
-  getCars() {
-    const cars = CARS;
-    return of(cars)
+  getCars(): Observable<Car[]> {
+    const cars = of(CARS );
+    this.messageService.add('ciao, sono l\'car service')
+    return cars;
   }
+
 }
