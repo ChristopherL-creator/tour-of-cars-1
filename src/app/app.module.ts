@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -15,7 +16,8 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     CarListComponent,
     CarDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

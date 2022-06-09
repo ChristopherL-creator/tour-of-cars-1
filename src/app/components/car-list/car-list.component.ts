@@ -11,23 +11,16 @@ import { MessageService } from './services/message/message.service';
 export class CarListComponent implements OnInit {
 
   cars: Car[] = [];
-  selectedCar?: Car;
- 
 
-  constructor(private carApiService: CarApiService, private messageService:MessageService) { }
+  constructor(private carApiService: CarApiService) { }
 
   ngOnInit(): void {
     this.getCars();
     }
 
-
-  openDetail(car: Car): void{
-    this.selectedCar = car;
-    this.messageService.add(`CarsComponent: Selected car id=${car.id}`)
-  }
-
   getCars(): void {
     this.carApiService.getCars()
-        .subscribe(cars => this.cars = cars);
-}
+        .subscribe(cars => this.cars = cars)
+  }
+
 }
